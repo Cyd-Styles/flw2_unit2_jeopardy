@@ -33,17 +33,25 @@ let categories = [
  *      Answer: https://bit.ly/3gOwrga
  */
 function renderCategories() {
-  // Add code here
-
+  let categoryNames = [];
   for (const category of categories) {
-    //console.log(category);
+    let upperCaseCategoryNames = category.toUpperCase();
 
-    let categoryName =
+    //Pushes values into the array categoryNames
+    //Value is a block of HTML from below using the category variable for the top of the page
+    categoryNames.push(
       "<div class='category'>" +
-      " <div class='category-cell'> category </div>" +
-      " </div>";
-    console.log(categoryName);
+        "<div class='category-cell'>" +
+        upperCaseCategoryNames +
+        "</div>" +
+        " </div>"
+    );
   }
+  // Declaring allCategories
+  //Taking the categoryNames array and turning it all into a string using .join method
+  let allCategories = categoryNames.join("");
+  // Finding id element in HTML file (index.html) that has an id of categories
+  // Appends (adds) the value of the AllCategoires variable into the
+  //categories element
+  $("#categories").append(allCategories);
 }
-
-
