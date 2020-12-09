@@ -41,6 +41,7 @@ function attachClickHandlers() {
     let moneyValue = $(questionElement).text().replace("$", "");
     $(questionElement).click(() => {
       // Add code here
+        questionOnClick(categoryIndex, moneyValue);
     });
   });
 }
@@ -60,14 +61,14 @@ function questionOnClick(categoryIndex, moneyValue) {
   $("#question-modal-text").html(question.question_text);
   $("#question-modal-show-answer")
     .click(() => {
-      // Add code here
-      console.log("I just got clicked, I wish I could do more though!");
+      // Added the answerOnClick function so that it displays the answer when pressed
+      answerOnClick(categoryIndex, moneyValue);
     })
     .show();
 
   $("#question-modal-close").click(() => {
-    // Add code here
-    console.log("I just got clicked, I wish I could do more though!");
+    // Added the hideQuestionPopup so that it closes the question when pressed 
+    hideQuestionPopup();
   });
   $("#question-modal").modal("show");
 }
